@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface CatRepository extends CrudRepository<CatEntity, String> {
 
-    @Query(value = "Select * from cat where voted = 0  limit 2", nativeQuery = true)
+    @Query(value = "Select distinct * from cat where voted = 0  limit 2", nativeQuery = true)
     List<CatEntity> recupererLesChatsParDeux();
 
     @Override
